@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دكتور أسنان</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        .about {
+            text-align: center;
+        }
+
+        .about img {
+            max-width: 200px;
+            border-radius: 50%;
+        }
+
+        .services ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .services ul li {
+            background: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+        }
+
+        footer {
+            text-align: center;
+            background: #f4f4f4;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        /* زر واتساب */
+        #whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        #whatsapp-button:hover {
+            background-color: #1ebe57;
+        }
+
+        #whatsapp-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* زر العودة للأعلى */
+        #scroll-to-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: none; /* مخفي افتراضيًا */
+        }
+
+        #scroll-to-top:hover {
+            background-color: #0056b3;
+        }
+
+        #scroll-to-top img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>مرحبًا بكم في عيادة دكتور الأسنان</h1>
+    </header>
+
+    <div class="container">
+        <section class="about section">
+            <h2>عن الدكتور</h2>
+            <img src="https://via.placeholder.com/200" alt="Dr. Image">
+            <p>دكتور متخصص في طب الأسنان مع خبرة تزيد عن 10 سنوات، يسعى لتقديم أفضل الخدمات لتحسين صحة الفم والأسنان.</p>
+        </section>
+
+        <section class="services section">
+            <h2>خدماتنا</h2>
+            <ul>
+                <li>تنظيف وتبييض الأسنان</li>
+                <li>حشوات الأسنان التجميلية</li>
+                <li>تقويم الأسنان</li>
+                <li>زراعة الأسنان</li>
+                <li>علاج أمراض اللثة</li>
+            </ul>
+        </section>
+
+        <section class="social-icons">
+            <h3>تابعنا على وسائل التواصل الاجتماعي</h3>
+            <a href="#" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Facebook_Logo_2020.png" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
+            <a href="#" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter"></a>
+            <a href="#" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 عيادة دكتور الأسنان. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- زر واتساب -->
+    <button id="whatsapp-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </button>
+
+    <!-- زر العودة للأعلى -->
+    <button id="scroll-to-top">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Arrow_up_font_awesome.svg" alt="Scroll to Top">
+    </button>
+
+    <script>
+        // رابط واتساب
+        const whatsappNumber = "1234567890"; // ضع رقم هاتفك هنا مع الكود الدولي بدون +
+
+        document.getElementById("whatsapp-button").addEventListener("click", function() {
+            const whatsappURL = `https://wa.me/${whatsappNumber}`;
+            window.open(whatsappURL, "_blank");
+        });
+
+        // زر العودة للأعلى
+        const scrollToTopButton = document.getElementById("scroll-to-top");
+
+        // إظهار الزر عند التمرير للأسفل
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 300) {
+                scrollToTopButton.style.display = "flex";
+            } else {
+                scrollToTopButton.style.display = "none";
+            }
+        });
+
+        // التمرير لأعلى عند الضغط على الزر
+        scrollToTopButton.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+</html>
